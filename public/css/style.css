@@ -1,0 +1,28 @@
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(207,216,220,.35);
+    color: #4273fa;
+    font-weight: 600;
+    padding: 1.25rem;
+}
+.pull-right {
+    float: right;
+}
+.card-header>i {
+    margin-right: .5rem;
+}
+.bg{
+    background: white;
+}
+.card-header{
+    background: white !important;
+}
+.pl-4, .px-4 {
+
+    margin-top: 5%!important;
+}
+.btn
+{
+color:#fff !important;
+}
