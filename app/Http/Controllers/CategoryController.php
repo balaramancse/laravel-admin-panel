@@ -55,7 +55,7 @@ class CategoryController extends Controller
                 $categoryfile->category_slug = $request->input('category_slug');
                 $categoryfile->category_image = $fileName;
                 $categoryfile->save();
-                return redirect('admin/category')->with(['message' => 'Record is saved into the database', 'alert' => 'alert-success']);
+                return redirect('admin/category')->with(['message' => 'Record Inserted Successfully !!', 'alert' => 'alert-success']);
             } else {
             return redirect('admin/category')->with(['error' => 'Category name already exists !', 'alert' => 'alert-success']);
             }
@@ -69,7 +69,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        return 34534;
     }
 
     /**
@@ -80,7 +80,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return 1;
     }
 
     /**
@@ -103,6 +103,22 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Category::find($id);
+        $post->delete();
+        return redirect('admin/category')->with(['error' => 'Record has been successfully deleted', 'alert' => 'alert-success']);
+         
     }
+
+    public function changeStatus(Request $request)
+    {
+        $user = Category::find($request->cat_id);
+        $user->status = $request->status;
+        $user->save();
+  
+        return response()->json(['success'=>'Status change successfully.']);
+    }
+
+
+
+    
 }

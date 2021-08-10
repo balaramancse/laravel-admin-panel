@@ -28,6 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'admin','middleware' => ['is_admin']], function() {
     
     Route::get('home',[App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
+    Route::post('changeStatus', 'App\Http\Controllers\CategoryController@changeStatus');
     Route::resource('category', App\Http\Controllers\CategoryController::class);
     
 });

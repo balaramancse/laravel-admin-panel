@@ -16,12 +16,6 @@
     </div>
 @endif
 
-
-@if(session()->has('message'))
-            <div class="alert {{session('alert') ?? 'alert-info'}}">
-                {{ session('message') }}
-            </div>
- @endif
    <form id="category_form" action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
    {{ csrf_field() }}
             <div class="form-group row">
